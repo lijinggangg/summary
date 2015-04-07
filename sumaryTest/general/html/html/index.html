@@ -1,0 +1,153 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<link href="css/shu.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+	//视频播放
+	function videoClick(){
+		//img = document.getElementById("img");
+		window.location.href='http://www.imohoo.com/{"action":"playVideo"}';
+	}
+	//图片展播
+	function imgClick(){
+		//video = document.getElementById("video");
+		window.location.href='http://www.imohoo.com/{"action":"viewImage"}';
+	}
+	//文字大小
+	function changeFont(intSize,intline){
+		div = document.getElementById("content_1");
+		div.style.fontSize = intSize;
+		div.style.lineHeight = intline;
+	}
+	//我要评论
+	function commentClick(){
+		//img = document.getElementById("img");
+		window.location.href='http://www.imohoo.com/{"action":"toComment"}';
+	}
+	
+	//更多评论
+	
+	function morecommentClick(){
+		//img = document.getElementById("img");
+		window.location.href='http://www.imohoo.com/{"action":"morecomment"}';
+	}
+	function showMoreCommnet(data){
+	
+		//var data = '{"comment":[{"id":"19","comment":"分公司高盛公司个","user_id":"","pubtime":"2010-08-23 05:42","username":"iphone"},{"id":"8","comment":"好得很打电话和","user_id":"0","pubtime":"2010-08-23 03:00","username":"iphone"},{"id":"4","comment":"很不错的文章哦！","user_id":"0","pubtime":"2010-08-17 14:39","username":"iphone"},{"id":"1","comment":"好东西哦","user_id":"","pubtime":"2010-08-16 00:00","username":"iphone"},{"id":"2","comment":"呵呵挥洒华盛顿和社会活动","user_id":"","pubtime":"2010-08-16 00:00","username":"iphone"}],"nextCmd":"http://www.knews.com/index.php?q=Api/api&ver=1.0&cmd=getMoreComment&aid=2&offset=15"}';
+		var comments = eval('('+data+')');
+		var comment = comments.comment;
+		var pinglun = document.getElementById("pinglun");
+		var s ='';
+		for(var i=0;i<comment.length; i++){
+			s+='<div class="plr15">';
+			s+='<div class="pl_name">用户<span class="name">'+comment[i].username+'</span>于 '+comment[i].pubtime+' 评论</div>';
+			s+='<h5 class="pl_content">'+comment[i].comment+'</h5>';
+			s+='</div>';
+		}
+		pinglun.innerHTML += s;
+		
+	}
+	
+	//data
+	function init(data,openpl){
+		var openpl='%@'; //1开启  0关闭
+		var data = '%@';
+		var cats = eval('('+data+')');
+		var comment = cats.comment;
+		var subject = document.getElementById("subject");
+		var date = document.getElementById("date");
+		var comefrom = document.getElementById("comefrom");
+		var hit = document.getElementById("hit");
+		var img = document.getElementById("img");
+		var video = document.getElementById("video");
+		var content = document.getElementById("content");
+		var pinglun = document.getElementById("pinglun");
+
+		if(cats.images){
+			img.src = cats.images[0].src;
+			imgdiv.style.display = "block";
+		}else{
+			imgdiv = document.getElementById("imgdiv");
+			imgdiv.style.display = "none";
+		}
+		
+		if(cats.video){
+			video.src = cats.video.video_icon.src;
+			videodiv.style.display = "block";
+		}else{
+			videodiv = document.getElementById("videodiv");
+			videodiv.style.display = "none";
+		}	
+		subject.innerHTML = cats.title;
+		document.getElementById("date_comefrom").style.display = "block"; 
+		content.innerHTML = cats.content;
+		date.innerHTML = cats.date;	
+		comefrom.innerHTML = cats.author;
+		hit.innerHTML = cats.hit;
+		if(comment){
+			var s ='';
+			for(var i=0;i<comment.length; i++){
+				s+='<div class="plr15">';
+				s+='<div class="pl_name">用户<span class="name">'+comment[i].username+'</span>于 '+comment[i].pubtime+' 评论</div>';
+				s+='<h5 class="pl_content">'+comment[i].comment+'</h5>';
+				s+='</div>';
+			}
+			pinglun.innerHTML = s;
+		}
+		if(openpl ==1)document.getElementById("openpl").style.display = "block"; //评论显示判断
+		//date.innerHTML = cats.date;
+	}
+	
+</script>
+<style>
+.a1 {
+	Z-INDEX: 2;   POSITION: absolute; TOP: 112px;  left: 170px; visibility: inherit;
+
+}
+.a2 {
+	Z-INDEX: 4;   POSITION: absolute; TOP: 3px;  left: 3px; visibility: inherit;
+
+}
+</style>
+
+</head>
+
+<body onLoad="init();">
+<div class="top_1">
+<!--<div class="top"></div>-->
+<div class="content">
+<h3 class="align_c" id="subject"></h3>
+<div style="padding-top:5px;text-align:center; color:#B5B5B5; font-size:14px;display:none;" id ="date_comefrom"><span id="date"></span><span class="pl15">作者：<span id="comefrom"></span></span><span class="pl15">点击(<span id="hit"></span>)</span></div>
+
+<div class="videos pt15" id="videodiv" style="display:none">
+<div style="position:absolute; z-index:3;"> 
+	<div class="a2"><a href="#" onClick="videoClick()"><img src="img/play.png" /></a></div>
+ </div>
+<img onClick="videoClick()" id="video" class="video_img" src="" width="185"/></div>
+
+<div class="images pt15" id="imgdiv" style="display:none;float:right;">
+	<img class="images_img" onClick="imgClick()" id="img" src=""/>
+</div>	
+<div class="content_1 font14" id="content_1">
+<div id="content"></div>
+<div id="openpl" style="display:none;font-size:14px;">
+	<div class="pl_title"><h4>评论</h4></div>
+	<div id="pinglun">
+		<div class="plr15">
+		<h5 class="pl_content">暂无评论</h5>
+		</div>
+
+	</div>
+	<div class="more">
+		<a onClick="commentClick();" style="cursor:pointer;"><div class="float_l bt_1" style="line-height:22px;">我要评论</div></a>
+		<a onClick="morecommentClick();" style="cursor:pointer;"><div class="float_r bt_1" style="line-height:22px;">更多评论</div></a>
+	</div>
+</div>
+</div>
+</div>
+<!--<div class="bottom"></div>-->
+</div>
+</body>
+</html>

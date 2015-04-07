@@ -1,0 +1,153 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title></title>
+<link href="css/shu.css" rel="stylesheet" type="text/css">
+
+<script type="text/javascript">
+	//视频播放
+	function videoClick(){
+		//img = document.getElementById("img");
+		window.location.href='http://www.imohoo.com/{"action":"playVideo"}';
+	}
+	//图片展播
+	function imgClick(){
+		//video = document.getElementById("video");
+		window.location.href='http://www.imohoo.com/{"action":"viewImage"}';
+	}
+	//文字大小
+	function changeFont(intSize,intline){
+		div = document.getElementById("content_1");
+		div.style.fontSize = intSize;
+		div.style.lineHeight = intline;
+	}
+	//我要评论
+	function commentClick(){
+		//img = document.getElementById("img");
+		window.location.href='http://www.imohoo.com/{"action":"toComment"}';
+	}
+	
+	//更多评论
+	
+	function morecommentClick(){
+		//img = document.getElementById("img");
+		window.location.href='http://www.imohoo.com/{"action":"morecomment"}';
+	}
+	function showMoreCommnet(data){
+	
+		//var data = '{"comment":[{"id":"19","comment":"分公司高盛公司个","user_id":"","pubtime":"2010-08-23 05:42","username":"iphone"},{"id":"8","comment":"好得很打电话和","user_id":"0","pubtime":"2010-08-23 03:00","username":"iphone"},{"id":"4","comment":"很不错的文章哦！","user_id":"0","pubtime":"2010-08-17 14:39","username":"iphone"},{"id":"1","comment":"好东西哦","user_id":"","pubtime":"2010-08-16 00:00","username":"iphone"},{"id":"2","comment":"呵呵挥洒华盛顿和社会活动","user_id":"","pubtime":"2010-08-16 00:00","username":"iphone"}],"nextCmd":"http://www.knews.com/index.php?q=Api/api&ver=1.0&cmd=getMoreComment&aid=2&offset=15"}';
+		var comments = eval('('+data+')');
+		var comment = comments.comment;
+		var pinglun = document.getElementById("pinglun");
+		var s ='';
+		for(var i=0;i<comment.length; i++){
+			s+='<div class="plr15">';
+			s+='<div class="pl_name">用户<span class="name">'+comment[i].username+'</span>于 '+comment[i].pubtime+' 评论</div>';
+			s+='<h5 class="pl_content">'+comment[i].comment+'</h5>';
+			s+='</div>';
+		}
+		pinglun.innerHTML += s;
+		
+	}
+	
+	//data
+	function init(data,openpl){
+		var openpl='%@'; //1开启  0关闭
+		var data = '{"author":"扬子晚报","hit":"10","comefrom":"扬子晚报","content":" 11月3日晚间消息，在360正式下线扣扣保镖产品后，其对外发布“360致网民的紧急求助信”，称目前是360生死存亡的紧急关头，希望用户“为了互联网安全的未来停用腾讯QQ三天”，以示对腾讯公司不尊重用户权益的抗议。%5Cr%5Cn%5Cr%5Cn　　以下为360致网民的紧急求助信全文：%5Cr%5Cn%5Cr%5Cn　　各位亲爱的朋友：%5Cr%5Cn%5Cr%5Cn　　您好！%5Cr%5Cn%5Cr%5Cn　　首先感谢您在百忙之中阅读这封事关360公司发来的紧急求援信，然后恳请您耐心的读完，并给予我们您的声援。360在您的支持下成长起来，这是360生死存亡的紧急关头，也是中国互联网最危险的时刻，希望您能够坚定地站出来，再次给予我们您的信任与支持！%5Cr%5Cn%5Cr%5Cn　　自360公司开发了360隐私保护器之后，腾讯公司就采取了一系列的打压措施来报复360。这一次腾讯使用了史无前例的狠毒手段——强制用户卸载360安全产品。对此，360公司感到无比的愤怒，同时也感到无助与无奈。%5Cr%5Cn%5Cr%5Cn　　360的安全软件是一款工具，它通过稳固而坚实的安全体系来保护用户的电脑，保护用户在上网过程中不被肆虐的木马病毒所侵害。很多用户迫于QQ的野蛮威胁，被迫卸载360。对用户的这种行为我们很理解，因为很多用户的亲朋好友维系在QQ上。%5Cr%5Cn%5Cr%5Cn　　腾讯公司滥用了用户的信任，强制用户卸载360安全产品，这种行为彻底蔑视用户的权益，用户的安全得不到保证，这是对用户的极度不负责任。%5Cr%5Cn%5Cr%5Cn　　在过去的几年中，360公司敢于挑战行业潜规则，也一直在与互联网上的黑恶势力做着斗争，但是360靠着用户的支持走到了今天。%5Cr%5Cn%5Cr%5Cn　　今天，腾讯公司使出最残忍的手段，试图绞杀360。腾讯公司是中国最大的的互联网公司，市值高达3000多亿元，拥有近70亿元的现金，而360公司则是一家只有几百人的、充满激情和梦想的创业公司。两者的实力有着明显的差距。%5Cr%5Cn%5Cr%5Cn　　但是，360公司从来就没有惧怕过任何势力。只要是为了用户的利益，为了用户能够保障自己最基本安全的权益，无论前方是地雷阵还是万丈深渊，我们一定会勇往直前！%5Cr%5Cn%5Cr%5Cn　　我们相信用户的力量！我们相信您的力量！%5Cr%5Cn%5Cr%5Cn　　所以，我们建议您：%5Cr%5Cn%5Cr%5Cn　　1、 请您及您身边的朋友们，为了互联网安全的未来停用腾讯QQ三天，以示对腾讯公司不尊重用户权益的抗议。在这三天之间您或您的朋友可以使用MSN或飞信等其他聊天工具代替；%5Cr%5Cn%5Cr%5Cn　　2、 如果您及您身边的朋友无法离开腾讯QQ，那就请您及您的朋友们使用WebQQ。%5Cr%5Cn%5Cr%5Cn　　当昔日的王者不但背叛了用户，而且带着军火辎重投奔了资本时，我们将如何奋起自卫？%5Cr%5Cn%5Cr%5Cn　　好人最大的犯罪，是对犯罪的宽恕。难道未来中国的互联网只允许有一家腾讯公司？难道您和亲友、我们的下一代都要被这个公司挟持？难道正义、阳光、安全将被消灭？！%5Cr%5Cn%5Cr%5Cn　　是的，我们相信您的力量！您参与的力量！%5Cr%5Cn%5Cr%5Cn　　360公司%5Cr%5Cn%5Cr%5Cn　　2010年11月3日%5Cr%5Cn%5Cr%5Cn","news_id":"3581","title":"歌曲《我爸叫李刚》痛批醉驾官二代 ","date":"2010-11-05","images":[{"id":"7732","news_id":"3581","src":"http://api.5imini.com/yzwb/uploadfile/newsimg/2010-11-05/original/1288926277-1.jpg","width":"0","height":"0","title":"","alt":"","type":"3"}],"video":{"news_id":"3581","type":"1","src":"http://api.5imini.com/yzwb/upload/video/1287631231-123.mp4","width":"320","height":"240","title":"","alt":"","video_icon":{"src":"http://api.5imini.com/yzwb/uploadfile/videoimg/2010-11-05/original/1288920735-1287630812-2222.jpg","width":"0","height":"0","title":"","alt":""}},"comment":[],"nextCmd":""}';
+		var cats = eval('('+data+')');
+		var comment = cats.comment;
+		var subject = document.getElementById("subject");
+		var date = document.getElementById("date");
+		var comefrom = document.getElementById("comefrom");
+		var hit = document.getElementById("hit");
+		var img = document.getElementById("img");
+		var video = document.getElementById("video");
+		var content = document.getElementById("content");
+		var pinglun = document.getElementById("pinglun");
+
+		if(cats.images){
+			img.src = cats.images[0].src;
+			imgdiv.style.display = "block";
+		}else{
+			imgdiv = document.getElementById("imgdiv");
+			imgdiv.style.display = "none";
+		}
+		
+		if(cats.video){
+			video.src = cats.video.video_icon.src;
+			videodiv.style.display = "block";
+		}else{
+			videodiv = document.getElementById("videodiv");
+			videodiv.style.display = "none";
+		}	
+		subject.innerHTML = cats.title;
+		document.getElementById("date_comefrom").style.display = "block"; 
+		content.innerHTML = cats.content;
+		date.innerHTML = cats.date;	
+		comefrom.innerHTML = cats.author;
+		hit.innerHTML = cats.hit;
+		if(comment){
+			var s ='';
+			for(var i=0;i<comment.length; i++){
+				s+='<div class="plr15">';
+				s+='<div class="pl_name">用户<span class="name">'+comment[i].username+'</span>于 '+comment[i].pubtime+' 评论</div>';
+				s+='<h5 class="pl_content">'+comment[i].comment+'</h5>';
+				s+='</div>';
+			}
+			pinglun.innerHTML = s;
+		}
+		if(openpl ==1)document.getElementById("openpl").style.display = "block"; //评论显示判断
+		//date.innerHTML = cats.date;
+	}
+	
+</script>
+<style>
+.a1 {
+	Z-INDEX: 2;   POSITION: absolute; TOP: 112px;  left: 170px; visibility: inherit;
+
+}
+.a2 {
+	Z-INDEX: 4;   POSITION: absolute; TOP: 3px;  left: 3px; visibility: inherit;
+
+}
+</style>
+
+</head>
+
+<body onLoad="init();">
+<div class="top_1">
+<!--<div class="top"></div>-->
+<div class="content">
+<h3 class="align_c" id="subject"></h3>
+<div style="padding-top:5px;text-align:center; color:#B5B5B5; font-size:14px;display:none;" id ="date_comefrom"><span id="date"></span><span class="pl15">作者：<span id="comefrom"></span></span><span class="pl15">点击(<span id="hit"></span>)</span></div>
+
+<div class="videos pt15" id="videodiv" style="display:none">
+<div style="position:absolute; z-index:3;"> 
+	<div class="a2"><a href="#" onClick="videoClick()"><img src="img/play.png" /></a></div>
+ </div>
+<img onClick="videoClick()" id="video" class="video_img" src="" width="185"/></div>
+
+<div class="images pt15" id="imgdiv" style="display:none;float:right;">
+	<img class="images_img" onClick="imgClick()" id="img" src=""/>
+</div>	
+<div class="content_1 font14" id="content_1">
+<div id="content"></div>
+<div id="openpl" style="display:none;font-size:14px;">
+	<div class="pl_title"><h4>评论</h4></div>
+	<div id="pinglun">
+		<div class="plr15">
+		<h5 class="pl_content">暂无评论</h5>
+		</div>
+
+	</div>
+	<div class="more">
+		<a onClick="commentClick();" style="cursor:pointer;"><div class="float_l bt_1" style="line-height:22px;">我要评论</div></a>
+		<a onClick="morecommentClick();" style="cursor:pointer;"><div class="float_r bt_1" style="line-height:22px;">更多评论</div></a>
+	</div>
+</div>
+</div>
+</div>
+<!--<div class="bottom"></div>-->
+</div>
+</body>
+</html>

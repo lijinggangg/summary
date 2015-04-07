@@ -1,0 +1,60 @@
+/*------------------------------
+=BASIC SETUP
+------------------------------*/
+/*#list a{ text-decoration:none;cursor:pointer;font-family:"微软雅黑";} 此条css去掉了color:#000;因为在list.html里，a链接颜色变换不了，所以去掉。*/
+
+/* Makeshift CSS Reset */
+* {margin: 0;padding: 0; font-family:"微软雅黑";}
+img{ border:0px;}
+.float_l{ float:left;}
+.float_r{ float:right;}
+div,h1{ font-family:"微软雅黑";}
+.align_c{ text-align:center;}
+ul,li{ list-style:none;}
+.clear{ clear:both;}
+.grey_1{ color:#5d5d5d;}
+.grey_1 a{ color:#5d5d5d;}
+.show{ display:block;}
+.hidden{ display:none}
+.b{ font-weight:700;}
+.font14{ font-size:14px;}
+
+.font16{ font-size:16px;}
+.plr15{ margin-left:15px; margin-right:15px;border-bottom:1px solid #C0C0C0; padding-bottom:6px;}
+.pt40{ padding-top:40px;} 
+.zhangjie{ color:#9A9A9A;}
+.clear{ clear:both;}
+.white{ color:#FFFFFF;}
+.pt3{ padding-top:3px; display:block; width:60px;}
+.ml10{ margin-left:10px;}
+.ml3{ margin-left:3px;}
+.pl150{padding-left:150px;}
+.pl4{ padding-left:4px;}
+.pl15{ padding-left:15px;}
+.pl22{ padding-left:22px;}
+.pr25{ padding-right:25px;}
+.pr4{ padding-right:4px;}
+.pt15{ padding-top:15px;} 
+.pt25{ padding-top:25px;} 
+h1{font-size:28px}h2{font-size:22px}h3{font-size:18px; color:#333333; padding-left:40px; padding-right:40px;}h4{font-size:16px}h5{font-size:14px}h6{font-size:12px}
+body{min-height:360px;overflow:scroll;overflow-y:hidden;}
+
+.top{ background:url(../img/left_top.gif) 0 0 no-repeat,url(../img/right_top.gif) right 0 no-repeat; height:15px;}
+.top_1{background:#FFFFFF; }
+.content{padding-top:15px;}
+.content_1{ margin:10px 20px 20px;line-height:22px;}
+.bottom{ background:url(../img/left_bottom.gif) 0 0 no-repeat,url(../img/right_bottom.gif) right 0 no-repeat; height:8px;}
+.pl_title{border-top:1px solid #C0C0C0; margin-top:10px; padding-left:13px; padding-top:14px; height:26px;}
+.pl_name{ font-family:"宋体"; color:#8F8F8F; padding-top:5px; height:25px;}
+.pl_content{ color:#4B4B4B; padding-left:23px;}
+.bt_1{width:70px; height:23px; text-align:center;background: -webkit-gradient(linear, 0 0, 0 100%, from(#F3F4F4), to(#BABABA)); -webkit-border-radius: 6px;}
+.more{padding-left:17px;  padding-right:17px; padding-top:20px; height:50px;}
+.more a{ text-decoration:none; color:#333333; font-weight:700;}
+h5{ font-weight:100;}
+.name{ padding-left:15px; padding-right:15px;}
+
+.images{ width:141px; margin-left:auto; margin-right:auto;} 
+.videos{ width:280px; margin-left:auto; margin-right:auto;} 
+.images_img{ width:120px; text-align:center; border:3px solid #FFF; -webkit-box-shadow:0px 0px 5px #676767; }
+.video_img{ width:280px; height:145px; text-align:center; border:3px solid #FFF; -webkit-box-shadow:0px 0px 5px #676767; }
+.video_img2{ width:280px; text-align:center; border:3px solid #FFF; -webkit-box-shadow:0px 0px 5px #676767; }
