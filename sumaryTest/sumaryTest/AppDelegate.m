@@ -32,7 +32,9 @@
 //    self.identifierString = @"hello";
     
     
-    /*The word is test the git is corrent or not*/
+
+    
+    /*Here is the  addLhttps://github.com/lijinggangg/summary*/
     
     
     return YES;
