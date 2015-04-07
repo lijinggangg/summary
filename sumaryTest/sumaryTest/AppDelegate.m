@@ -30,6 +30,11 @@
 //    
 //    self.window.rootViewController = mainV;
 //    self.identifierString = @"hello";
+    
+    
+    /*The word is test the git is corrent or not*/
+    
+    
     return YES;
 }
 
